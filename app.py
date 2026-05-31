@@ -57,3 +57,13 @@ def portfolio():
         ),
         "holdings": market_data
     }
+
+@app.get("/homepage")
+def homepage():
+    data = portfolio()
+
+    return {
+        "value": f"${data['estimated_value']:,.0f}",
+        "change": f"${data['portfolio_change_dollars']:,.0f}",
+        "percent": f"{data['portfolio_change_pct']:.2f}%"
+    }
