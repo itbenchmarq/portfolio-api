@@ -132,6 +132,6 @@ def homepage():
     return {
         "value": f"${data['estimated_value']:,.0f}",
         "change": f"${data['portfolio_change_dollars']:,.0f}",
-        "percent": f"{data['portfolio_change_pct']:.2f}%",
+        "percent": round(data['portfolio_change_pct'], 2),
         "thirty_day_change": f"${data['thirty_day_change_dollars']:,.0f}"
     }
