@@ -38,7 +38,7 @@ def get_returns(symbol):
             daily_return = ((current - previous) / previous) * 100
 
         # 30-day return
-        monthly_hist = ticker.history(period="1mo")
+        monthly_hist = ticker.history(period="ytd")
 
         if len(monthly_hist) < 2:
             monthly_return = 0
